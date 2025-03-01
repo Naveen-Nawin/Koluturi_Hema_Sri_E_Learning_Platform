@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .course-card {
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        .footer-container {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        .social-icons img {
+            width: 30px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">E-Learning</div>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('courses_page') }}">Courses</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            {% if session.user %}
+                <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="btn">Login</a>
+                <a href="{{ url_for('signup') }}" class="btn">Signup</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Upgrade Your Skills with <span class="highlight">Top Courses</span></h1>
+        <p>Join our online platform and start learning from industry experts.</p>
+        <a href="{{ url_for('courses_page') }}" class="btn explore-btn">Explore Courses</a>
+    </header>
+
+    <!-- Courses Section -->
+    <div class="courses-container">
+        <h1 class="section-title">Explore Our Top Development Courses 🚀</h1>
+        <div class="courses-grid">
+            <div class="course-card">
+                <h3>Frontend Development</h3>
+                <p>Learn HTML, CSS, JavaScript, React, Vue, and more.</p>
+            </div>
+            <div class="course-card">
+                <h3>Backend Development</h3>
+                <p>Master Python, Django, Node.js, Express, and databases.</p>
+            </div>
+            <div class="course-card">
+                <h3>Full Stack Development</h3>
+                <p>Become a pro in both frontend and backend technologies.</p>
+            </div>
+            <div class="course-card">
+                <h3>AI & Machine Learning</h3>
+                <p>Explore neural networks, deep learning, and Python AI libraries.</p>
+            </div>
+            <div class="course-card">
+                <h3>Cybersecurity & Ethical Hacking</h3>
+                <p>Master penetration testing, network security, and forensics.</p>
+            </div>
+            <div class="course-card">
+                <h3>Cloud Computing</h3>
+                <p>Learn AWS, Azure, Google Cloud, and DevOps.</p>
+            </div>
+            <div class="course-card">
+                <h3>Mobile App Development</h3>
+                <p>Build Android & iOS apps using Flutter, React Native, and Swift.</p>
+            </div>
+            <div class="course-card">
+                <h3>DevOps & CI/CD</h3>
+                <p>Learn Docker, Kubernetes, CI/CD, and Infrastructure Automation.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2024 Koluturi Hema Sri. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/hema-sri-koluturi-24a11b345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn"></a>
+                <a href="https://x.com/Naveen_098?t=uZRNHA25QHq7BezhjDdNJg&s=09"><img src="{{ url_for('static', filename='images/twitter.png') }}" alt="Twitter"></a>
+                <a href="https://www.instagram.com/_nannas.love_/profilecard/?igsh=MWd1ang4ZDMwajY2cg=="><img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

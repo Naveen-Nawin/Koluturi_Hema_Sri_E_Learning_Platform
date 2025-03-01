@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - E-Learning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='courses.css') }}">
+</head>
+<body class="courses-page">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">E-Learning</div>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Courses Section -->
+    <div class="courses-container">
+        <h1>Explore Our Top Development Courses 🚀</h1>
+        <p class="subtext">Upgrade your skills with industry-leading courses</p>
+
+        <div class="courses-grid">
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/frontend.jpg') }}" alt="Frontend Development">
+                <h3>Frontend Development</h3>
+                <p>Learn HTML, CSS, JavaScript, React, and more.</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/backend.jpg') }}" alt="Backend Development">
+                <h3>Backend Development</h3>
+                <p>Master Python, Django, Node.js, Express, and databases.</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/fullstack.jpg') }}" alt="Full Stack">
+                <h3>Full Stack Development</h3>
+                <p>Become a pro in both frontend and backend technologies.</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/ai.jpg') }}" alt="AI & Machine Learning">
+                <h3>AI & Machine Learning</h3>
+                <p>Explore neural networks, deep learning, and Python AI libraries.</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/cybersecurity.jpg') }}" alt="Cybersecurity">
+                <h3>Cybersecurity & Ethical Hacking</h3>
+                <p>Master penetration testing, network security, and forensics.</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/cloud.jpg') }}" alt="Cloud Computing">
+                <h3>Cloud Computing</h3>
+                <p>Learn AWS, Azure, Google Cloud, and DevOps.</p>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

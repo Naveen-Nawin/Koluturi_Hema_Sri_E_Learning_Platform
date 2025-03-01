@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - E-Learning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+<body class="contact-page">
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">E-Learning</div>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('courses_page') }}">Courses</a>
+            <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <div class="contact-container">
+        <h1>Contact Us 📩</h1>
+        <p class="subtext">We’d love to hear from you! Fill out the form below.</p>
+
+        {% if success %}
+            <p class="success-msg">Your message has been sent successfully! ✅</p>
+        {% endif %}
+
+        <form method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+
+</body>
+</html>
